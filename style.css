@@ -1,0 +1,143 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "roboto";
+    background-color: #f5f6fa;
+    --color1: #fff;
+    --color2: #0097e6;
+}
+
+header {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    list-style: none;
+    position: relative;
+    background-color: var(--color2);
+    padding: 12px 20px;
+    height: 50px;
+}
+
+.nav-bar {
+    list-style: none;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.menu {
+    display: flex;
+    position: relative;
+}
+
+.menu .list {
+    display: flex;
+    position: absolute;
+    right: 100px;
+    padding-top: 5px;
+}
+
+.menu li {
+    margin-right: 20px;
+    position: relative;
+    color: var(--color1);
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+}
+
+.menu li::after {
+    content: "";
+    position: absolute;
+    top: 22px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: var(--color1);
+    transition: 0.2s ease-in-out;
+}
+
+.menu li i {
+    margin-right: 10px;
+    color: var(--color1);
+}
+
+.menu li a {
+    text-decoration: none;
+    color: var(--color1);
+    text-transform: capitalize;
+}
+
+.menu li:hover:after {
+    width: 100%;
+}
+
+.open-menu,
+.close-menu {
+    position: absolute;
+    color: var(--color1);
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+
+.open-menu {
+    top: 30%;
+    right: 20px;
+    transform: translate(-50%);
+}
+
+.close-menu {
+    top: 20px;
+    right: 30px;
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width: 610px) {
+    span.menu {
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: var(--color2);
+        transition: all 0.5 ease-in-out;
+    }
+
+    .menu .list {
+        margin-top: 50px;
+        width: 30%;
+        display: inline-block;
+    }
+
+    .menu li {
+        margin-top: 40px;
+        width: fit-content;
+    }
+
+    .menu li a {
+        padding: 0px 5px;
+    }
+
+    .open-menu,
+    .close-menu {
+        display: block;
+    }
+
+    #check:checked ~ .menu {
+        right: 0;
+    }
+}
