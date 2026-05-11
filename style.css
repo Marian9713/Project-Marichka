@@ -8,8 +8,7 @@ body {
     font-family: "roboto";
     background-color: #de89f4;
     width: 100%;
-    flex-direction: column;
-    align-items: center;
+
     margin: 0;
     padding: 0;
 }
@@ -18,10 +17,10 @@ header {
     display: flex;
     grid-template-columns: 1fr 1fr;
     list-style: none;
-    position: relative;
+    position: fixed;
     background: linear-gradient(to bottom, #a52ec3, #de89f4);
     padding: 12px 20px;
-    height: 50px;
+    height: 60px;
     min-width: 100%;
     align-items: flex-start;
 }
@@ -44,7 +43,7 @@ menu {
 .menu .list {
     display: flex;
     position: absolute;
-    right: 100px;
+    right: 20px;
     padding-top: 5px;
 }
 
@@ -111,7 +110,6 @@ menu {
     padding: 64px;
     align-items: center;
     justify-content: center;
-    padding-left: 32px;
 }
 
 .about-content {
@@ -199,5 +197,7 @@ menu {
         border-radius: 36px;
         margin-bottom: 4px;
         display: block;
+        max-width: 460px;
+        max-height: 460px;
     }
 }
