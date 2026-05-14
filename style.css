@@ -2,13 +2,16 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    --bg-color: #f5cad2;
+    --nav-color: linear-gradient(to bottom, #e8b4f5, var(--bg-color));
+    --box-color: linear-gradient(to bottom, #f2e3f5, #f5e3e6);
+    --nav-color-mobile: linear-gradient(to left, #e8b4f5, var(--bg-color));
 }
 
 body {
     font-family: "roboto";
-    background-color: #de89f4;
+    background-color: var(--bg-color);
     width: 100%;
-
     margin: 0;
     padding: 0;
 }
@@ -18,7 +21,7 @@ header {
     grid-template-columns: 1fr 1fr;
     list-style: none;
     position: fixed;
-    background: linear-gradient(to bottom, #a52ec3, #de89f4);
+    background: var(--nav-color);
     padding: 12px 20px;
     height: 60px;
     min-width: 100%;
@@ -108,12 +111,45 @@ menu {
 
 #about {
     padding: 64px;
+}
+
+#about,
+#option,
+#price,
+#faq,
+#contact {
     align-items: center;
     justify-content: center;
 }
 
+#option,
+#price,
+#faq,
+#contact {
+    padding: 20px 64px;
+}
+
+.content-scroll {
+    border-radius: 36px;
+    padding: 16px;
+    align-items: center;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.scroll {
+    width: auto;
+    min-width: 80%;
+    padding: 16px;
+    margin: 24px;
+    background: var(--box-color);
+    border-radius: 36px;
+}
+
 .about-content {
-    background: linear-gradient(to bottom, #f8b4e4, #d6c7fb);
+    background: var(--box-color);
     align-items: center;
     width: 100%;
     display: flex;
@@ -133,6 +169,94 @@ menu {
     border-bottom-left-radius: 36px;
 }
 
+#option-block,
+#faq-content {
+    flex-direction: column;
+    height: 20%;
+    max-height: 260px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+table {
+    height: 40%;
+    left: 10%;
+    margin: 20px auto;
+    overflow-y: scroll;
+    position: static;
+    width: 80%;
+}
+.table-price {
+    color: black;
+    font-family: "Lato", sans-serif;
+    font-weight: 100;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+th {
+    font-weight: 400;
+    padding: 20px;
+    text-align: left;
+    width: 33.3333%;
+    text-align: center;
+}
+
+tr {
+    border-bottom: 4px;
+    margin-bottom: 8px;
+    background: var(--box-color);
+}
+
+td {
+    font-weight: 400;
+    padding: 20px;
+    text-align: left;
+    width: 33.3333;
+    text-align: center;
+}
+
+.up-tb-op {
+    border-top-left-radius: 36px;
+}
+
+.up-tb-pr {
+    border-top-right-radius: 36px;
+}
+
+.bottom-tb-op {
+    border-bottom-left-radius: 36px;
+}
+
+.bottom-tb-pr {
+    border-bottom-right-radius: 36px;
+}
+
+#button-block {
+    padding: 20px 16px;
+    align-items: center;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-msg {
+    border: none;
+    background: none;
+    cursor: pointer;
+    max-height: 36px;
+    max-width: 184px;
+    height: auto;
+    width: auto;
+}
+
+.button-msg img {
+    object-fit: fill;
+    height: 100%;
+    width: 100%;
+}
+
 @media (max-width: 720px) {
     span.menu {
         flex-direction: column;
@@ -143,7 +267,7 @@ menu {
         top: 0;
         right: -100%;
         z-index: 100;
-        background: linear-gradient(to left, #a52ec3, #de89f4);
+        background: var(--nav-color-mobile);
         transition: all 0.5 ease-in-out;
     }
 
@@ -172,7 +296,11 @@ menu {
         right: 0;
     }
 
-    #about {
+    #about,
+    #option,
+    #price,
+    #faq,
+    #contact {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -189,6 +317,7 @@ menu {
         text-align: center;
         overflow: visible;
         padding: 0;
+        background: var(--box-color);
     }
 
     .about-content img {
@@ -199,5 +328,9 @@ menu {
         display: block;
         max-width: 460px;
         max-height: 460px;
+    }
+
+    .button-msg img {
+        padding: 0 12px;
     }
 }
