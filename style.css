@@ -4,7 +4,7 @@
     box-sizing: border-box;
     --bg-color: #f5cad2;
     --nav-color: linear-gradient(to bottom, #e8b4f5, var(--bg-color));
-    --box-color: linear-gradient(to bottom, #f2e3f5, #f5e3e6);
+    --box-color: linear-gradient(to bottom, #f2e3f5, #f0daf5);
     --nav-color-mobile: linear-gradient(to left, #e8b4f5, var(--bg-color));
 }
 
